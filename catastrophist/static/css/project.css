@@ -1,13 +1,19 @@
-/* These styles are generated from project.scss. */
-
 .alert-debug {
-  color: black;
-  background-color: white;
+  background-color: #fff;
   border-color: #d6e9c6;
-}
+  color: #000; }
 
 .alert-error {
-  color: #b94a48;
   background-color: #f2dede;
   border-color: #eed3d7;
-}
+  color: #b94a48; }
+
+.test {
+  background-color: #b94a48;
+  height: 50vh;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  padding: 40px; }
+
+/*# sourceMappingURL=project.css.map */

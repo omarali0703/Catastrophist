@@ -35,3 +35,12 @@ $red: #b94a48;
   border-color: $dark-pink;
   color: $red;
 }
+
+.test {
+    background-color: $red;
+    height: 50vh;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    padding: 40px;
+}

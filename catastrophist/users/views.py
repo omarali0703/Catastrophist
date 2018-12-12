@@ -1,7 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
-from django.views.generic import DetailView, ListView, RedirectView, UpdateView
+from django.views.generic import DetailView, ListView, RedirectView, UpdateView, TemplateView
+from .models import Story
 
 User = get_user_model()
 
@@ -48,5 +49,20 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self):
         return reverse("users:detail", kwargs={"username": self.request.user.username})
 
-
 user_redirect_view = UserRedirectView.as_view()
+
+class HomeView(TemplateView):
+    template_name = "home"
+
+    def get_stories(self):
+        stories = Story.objects.all()
+        print(stories[0].story_name)
+        stories = Story.objects.all()
+        return render(self.request, "templates/pages/home.html", {"stories" : stories, "author":stories.user_creator.name,"template_name":template_name})
+
+def test(request):
+    stories = Story.objects.all()
+    return render(request, "templates/pages/home.html", {"stories" : stories, "author":stories.user_creator.name,"template_name":template_name})
+
+
+home_view = HomeView.as_view()
