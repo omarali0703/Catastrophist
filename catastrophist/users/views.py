@@ -52,12 +52,15 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 user_redirect_view = UserRedirectView.as_view()
 
-class HomeView(ListView):
-    template_name = "home"
 
+class HomeView(ListView):
+    template_name = "pages/home.html"
+    model = Story
+
+    """
     def get_stories(self):
         stories = Story.objects.all()
         print(stories[0].story_name)
         stories = Story.objects.all()
-
-    return reverse("users:detail", kwargs={"stories" : self.request.story.story_name})
+        return reverse("users:detail", kwargs={"stories" : self.request.story.story_name})
+    """

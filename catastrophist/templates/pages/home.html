@@ -2,5 +2,11 @@
 
 {%block content%}
 <h1> WHAT EVEN IS THIS?! </h1>
-<h1> {{stories}} </h1>
+{% if story_list %}
+  {% for story in story_list %}
+    <h2>{{ story.story_name }}</h2>
+  {% endfor %}
+{% else %}
+  <p>no stories available</p>
+{% endif %}
 {%endblock%}
