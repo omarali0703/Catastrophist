@@ -56,6 +56,7 @@ user_redirect_view = UserRedirectView.as_view()
 class HomeView(ListView):
     template_name = "pages/home.html"
     model = Story
+    context_object_name = 'story_list'
 
     """
     def get_stories(self):
