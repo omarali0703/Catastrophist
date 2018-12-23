@@ -6,6 +6,8 @@
 {% if story_list %}
   {% for story in story_list %}
     <h2>{{ story.story_name }}</h2>
+	<h3>{{ story.story_blurb }}</h3>
+	<h3>Created by, {{ story.user_creator }}.</h3>
   {% endfor %}
 {% else %}
   <p>no stories available</p>
