@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class StoriesConfig(AppConfig):
-    name = 'stories'
+    name = "catastrophist.stories"
+    verbose_name = "stories"

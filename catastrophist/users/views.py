@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.shortcuts import render, render_to_response
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView, TemplateView
-from .models import Story
+from ..stories.models import Story
 
 User = get_user_model()
 
@@ -56,12 +56,4 @@ user_redirect_view = UserRedirectView.as_view()
 class HomeView(ListView):
     template_name = "pages/home.html"
     model = Story
-    context_object_name = 'story_list'
-
-    """
-    def get_stories(self):
-        stories = Story.objects.all()
-        print(stories[0].story_name)
-        stories = Story.objects.all()
-        return reverse("users:detail", kwargs={"stories" : self.request.story.story_name})
-    """
+    context_object_name = 'home'
