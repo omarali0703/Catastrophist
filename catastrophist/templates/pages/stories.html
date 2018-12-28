@@ -1,23 +1,26 @@
 {% extends "base.html" %}
 
 {%block content%}
-<h1> Featured Stories </h1>
+<h1 class='page-title'> Featured Stories. </h1>
 
 {% if story_list %}
   {% for story in story_list %}
-    <h2>{{ story.story_name }}</h2>
-    <p> {{ story.story_blurb }}</p>
+      <div class='story-background'>
+        <p class='story-title'>{{ story.story_name }}</h2>
+        <p class='story-blurb'> {{ story.story_blurb }}</p>
 
-      {% for block in view.block_list %}
-        {%if block.story == story %}
-            <p> {{ block.body_text }}</p>
-        {% endif %}
-      {% endfor %}
+          {% for block in view.block_list %}
+            {%if block.story == story %}
+                <p class='story-block'> {{ block.body_text }}</p>
+            {% endif %}
+          {% endfor %}
 
-	<p> Created by, {{ story.user_creator }}.</p>
+    	<p class='story-author'> Created by, {{ story.user_creator }}.</p>
+        </div>
     {% endfor %}
 
 {% else %}
   <p>no stories available</p>
 {% endif %}
+
 {%endblock%}

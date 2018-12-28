@@ -8,6 +8,7 @@ from catastrophist.users.views import (
 )
 
 app_name = "users"
+
 urlpatterns = [
     path("", view=user_list_view, name="list"),
     path("~redirect/", view=user_redirect_view, name="redirect"),

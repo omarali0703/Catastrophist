@@ -29,7 +29,6 @@ class UserListView(LoginRequiredMixin, ListView):
 
 user_list_view = UserListView.as_view()
 
-
 class UserUpdateView(LoginRequiredMixin, UpdateView):
 
     model = User
@@ -40,7 +39,6 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self):
         return User.objects.get(username=self.request.user.username)
-
 
 user_update_view = UserUpdateView.as_view()
 
