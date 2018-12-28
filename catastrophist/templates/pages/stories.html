@@ -8,7 +8,7 @@
     <h2>{{ story.story_name }}</h2>
     <p> {{ story.story_blurb }}</p>
 
-      {% for block in block_list %}
+      {% for block in view.block_list %}
         {%if block.story == story %}
             <p> {{ block.body_text }}</p>
         {% endif %}

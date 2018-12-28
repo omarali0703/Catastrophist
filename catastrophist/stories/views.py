@@ -13,23 +13,9 @@ class StoriesView(ListView):
     model = Story
     context_object_name = 'story_list'
 
-    #def get_context_view(self, **kwargs):
-    #    context = super(ListView, self).get_context_data(**kwargs)
-    #    context['blocks'] = StoryBlock.objects.all()
-    #    return context
+    def block_list(self):
+        return StoryBlock.objects.all()
 
-class StoriesToBlockView(ListView):
-    template_name = "pages/stories.html"
-    context_object_name = 'block_list'
-
-    def get_context_data(ListView, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['story_list'] = Story.objects.all()
-        return context
-
-    def get_queryset(self):
-        q = StoryBlock.objects.all()
-        return q
 
 class UserStoriesView(ListView):
     template_name = "users/user_detail.html"

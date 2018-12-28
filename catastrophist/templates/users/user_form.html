@@ -15,14 +15,4 @@
     </div>
   </form>
 
-  {% if story_list %}
-    {% for story in story_list %}
-      <h2>{{ story.story_name }}</h2>
-  	<p> {{ story.story_blurb }}</p>
-  	<p> Created by, {{ story.user_creator }}.</p>
-    {% endfor %}
-  {% else %}
-    <p>no stories available</p>
-  {% endif %}
-
 {% endblock %}

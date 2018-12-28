@@ -5,7 +5,6 @@ from catastrophist.users.views import (
     user_redirect_view,
     user_update_view,
     user_detail_view,
-    HomeView,
 )
 
 app_name = "users"
