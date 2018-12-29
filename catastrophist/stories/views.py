@@ -35,7 +35,5 @@ class AddBlockView(UpdateView):
     def get_object(self):
         return StoryBlock.objects.get(id=1)
 
-    title = StoryBlock.objects.get(id=1).story.story_name
-
     def get_success_url(self):
         return reverse("users:detail", kwargs={"username": self.request.user.username})
