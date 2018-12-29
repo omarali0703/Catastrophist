@@ -13,13 +13,12 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
 
-    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
-
     {% block css %}
 
     <!-- Latest compiled and minified Bootstrap 4.1.1 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Kadwa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
 
     <!-- Your stuff: Third-party CSS libraries go here -->
 
@@ -46,13 +45,10 @@
             <li class="nav-item active">
                <a class="nav-link" id='navbar-brand-format' href="{% url 'stories:stories' %}">Featured </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" id='navbar-brand-format' href="{% url 'about' %}"> What is this? </a>
-            </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" id='navbar-brand-format' href="{% url 'users:detail' request.user.username  %}">{% trans "Me" %}</a>
+                <a class="nav-link" id='navbar-brand-format' href="{% url 'users:detail' request.user.username  %}">{% trans "Me" %} {{ username }}</a>
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
@@ -63,7 +59,7 @@
                 {# URL provided by django-allauth/account/urls.py #}
                 <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id='navbar-brand-format'>
                 {# URL provided by django-allauth/account/urls.py #}
                 <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
               </li>
@@ -84,6 +80,8 @@
 
       {% block content %}
       {% endblock content %}
+
+      <p class='story-author'> Copyright © Catastrophist 2018 Copyright Holder All Rights Reserved. </p>
 
     </div> <!-- /container -->
 

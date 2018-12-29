@@ -4,42 +4,38 @@
 {% block title %} {{ object.username }} {% endblock %}
 
 {% block content %}
-<div class="container">
+<h1 class='page-title'>{{ object.username }}</h1>
 
-  <div class="row">
-    <div class="col-sm-12">
+<div class='story-background'>
+    {% if object.name %}
+        <p class='story-block'> {{ object.name }} </p>
+    {% endif %}
 
-      <h1>{{ object.username }}</h1>
-      {% if object.name %}
-        <p>{{ object.name }}</p>
-      {% endif %}
-    </div>
-  </div>
-
-{% if object == request.user %}
-<!-- Action buttons -->
-<div class="row">
-
-  <div class="col-sm-12">
-    <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
-    <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
-    <!-- Your Stuff: Custom user template urls -->
-
-  </div>
+    {% if object == request.user %}
+    <!-- Action buttons -->
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
+                 <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+                <!-- Your Stuff: Custom user template urls -->
+            </div>
+        </div>
+    {% endif %}
 </div>
-{% endif %}
 
-<h2>My Stories</h2>
+<div class='story-background'>
+    <h2 class='page-title'>My Stories</h2>
 
-{%if view.story_list %}
-    {%for story in view.story_list %}
-        <h2> {{ story.story_name }} </h2>
-    {%endfor%}
-{%else%}
-    <p>You have nothing to show.</p>
-{%endif%}
+    {%if view.story_list %}
+        {%for story in view.story_list %}
+            <h2 class='story-title'> {{ story.story_name }} </h2>
+            <p class='story-blurb'> {{ story.story_blurb }} </p>
+            <a class="btn btn-primary" href="{% url 'stories:addblock' %}" role="button">New Block</a>
+
+        {%endfor%}
+    {%else%}
+        <p class='story-block'> You have nothing to show.</p>
+    {%endif%}
+</div>
 <!-- End Action buttons -->
-
-
-</div>
 {% endblock content %}

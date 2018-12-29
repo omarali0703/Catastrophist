@@ -1,5 +1,5 @@
 body {
-  background-color: #FFCC01; }
+  background-color: #FA5457; }
 
 .alert-debug {
   background-color: #fff;
@@ -9,15 +9,16 @@ body {
 .alert-error {
   background-color: #f2dede;
   border-color: #eed3d7;
-  color: #D9015C; }
+  color: #FA5457; }
 
 .story-block {
   background-color: #FFFBFB;
-  border-radius: 0px;
+  border-radius: 2px;
   font-weight: bold;
+  text-align: justify;
   font-family: 'Kadwa', serif;
-  color: #D9015C;
-  padding: 80px;
+  color: #FA5457;
+  padding: 8vw;
   padding-top: 20px;
   padding-bottom: 20px;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
@@ -25,41 +26,52 @@ body {
 
 .story-blurb {
   background-color: #FFFBFB;
-  border-radius: 0px;
+  border-radius: 2px;
   font-weight: bold;
   font-family: 'Kadwa', serif;
+  text-align: justify;
   color: green;
-  padding: 20px;
+  width: 100%;
+  padding: 8vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
 
 .story-title {
   background-color: #FFFBFB;
-  border-radius: 0px;
-  font-family: 'Kadwa', serif;
+  border-radius: 2px;
+  font-family: 'Patua One', cursive;
   font-weight: bold;
   font-size: 200%;
   color: #231089;
+  text-align: center;
   padding: 20px;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
 
 .page-title {
-  font-family: 'Kadwa', serif;
-  color: #fff; }
+  padding-top: 100px;
+  font-family: 'Patua One', cursive;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 6px 0px rgba(0, 0, 0, 0.1); }
 
 .story-author {
   background-color: #FFFBFB;
-  border-radius: 0px;
+  border-radius: 2px;
   font-weight: bold;
   font-family: 'Kadwa', serif;
+  text-align: right;
   color: green;
-  padding: 20px;
+  padding: 8vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
 
 .story-background {
-  padding: 20px;
+  padding-bottom: 30px;
   margin-bottom: 40px;
   border-bottom: 4px solid #fff;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
