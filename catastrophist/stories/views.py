@@ -15,13 +15,23 @@ class StoriesView(ListView):
     model = Story
     context_object_name = 'story_list'
 
+    def block_list(self):
+        return StoryBlock.objects.all()
+
 class UserStoriesView(ListView):
     template_name = "users/user_detail.html"
     model = Story
     context_object_name = 'story_list'
 
+    test = "ss"
+
+    def block_list(self):
+        return StoryBlock.objects.all()
+
 class AddBlockView(UpdateView):
     model = StoryBlock
+    fields=["body_text"]
+
     def get_object(self):
         return StoryBlock.objects.get(id=1)
 
@@ -29,5 +39,3 @@ class AddBlockView(UpdateView):
 
     def get_success_url(self):
         return reverse("users:detail", kwargs={"username": self.request.user.username})
-
-    fields=["body_text"]

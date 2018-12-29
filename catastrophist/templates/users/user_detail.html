@@ -27,11 +27,18 @@
     <h2 class='page-title'>My Stories</h2>
 
     {%if view.story_list %}
+    <p> {{view.title}} </p>
         {%for story in view.story_list %}
             <h2 class='story-title'> {{ story.story_name }} </h2>
             <p class='story-blurb'> {{ story.story_blurb }} </p>
-            <a class="btn btn-primary" href="{% url 'stories:addblock' %}" role="button">New Block</a>
 
+            {% for block in view.block_list %}
+                {%if block.story == story %}
+                    <p class='story-block'> {{ block.body_text }}</p>
+                {% endif %}
+            {% endfor %}
+
+            <a class="btn btn-primary" href="{% url 'stories:addblock' %}" role="button">Add</a>
         {%endfor%}
     {%else%}
         <p class='story-block'> You have nothing to show.</p>

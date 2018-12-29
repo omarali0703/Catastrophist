@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.shortcuts import render, render_to_response
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView, TemplateView
-from ..stories.models import Story
+from ..stories.models import Story, StoryBlock
 
 User = get_user_model()
 
@@ -16,6 +16,9 @@ class UserDetailView(LoginRequiredMixin, DetailView):
 
     def story_list(self):
         return Story.objects.filter(user_creator=self.request.user)
+
+    def block_list(self):
+        return StoryBlock.objects.all()
 
 
 user_detail_view = UserDetailView.as_view()

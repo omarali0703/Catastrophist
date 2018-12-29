@@ -71,6 +71,8 @@ body {
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
 
 .story-background {
+  padding: 0;
+  margin: 0;
   padding-bottom: 30px;
   margin-bottom: 40px;
   border-bottom: 4px solid #fff;
@@ -79,5 +81,14 @@ body {
 
 #navbar-brand-format {
   font-family: 'Kadwa', serif; }
+
+.btn {
+  background-color: #98CB4A;
+  color: #fff;
+  border: 0px;
+  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
+  font-size: 12pt;
+  font-family: 'Patua One', cursive; }
 
 /*# sourceMappingURL=project.css.map */
