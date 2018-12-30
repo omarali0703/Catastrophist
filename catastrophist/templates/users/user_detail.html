@@ -38,11 +38,12 @@
                 {% endif %}
             {% endfor %}
 
-            <a class="btn btn-primary" href="{% url 'stories:addblock' %}" role="button">Add</a>
+            <a class="btn btn-primary" href="{% url 'stories:addblock' %}" role="button">New Block</a>
         {%endfor%}
     {%else%}
         <p class='story-block'> You have nothing to show.</p>
     {%endif%}
+    <p><a class="btn btn-primary" id="newstory" href="{% url 'stories:addstory' %}" role="button">New Story</a></p>
 </div>
 <!-- End Action buttons -->
 {% endblock content %}

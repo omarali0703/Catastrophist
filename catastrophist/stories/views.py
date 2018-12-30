@@ -34,11 +34,15 @@ class UserStoriesView(ListView):
 
 
 class AddBlockView(UpdateView):
+    fields = ["body_text", "story"]
     model = StoryBlock
-    fields = ["body_text"]
 
     def get_object(self):
-        return StoryBlock.objects.get(id=1)
+        return StoryBlock.objects.all().first()
+
+#    def form_valid(self, form):
+#        StoryBlock.objects.create( **form.cleaned_data)
+#        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse("users:detail", kwargs={"username": self.request.user.username})
@@ -46,9 +50,11 @@ class AddBlockView(UpdateView):
 
 class AddStoryView(FormView):
     form_class = AddStoryForm
-    success_url = '/stories/'
     template_name = 'stories/story_form.html'
 
     def form_valid(self, form):
         Story.objects.create(user_creator_id=self.request.user.id, **form.cleaned_data)
         return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse("users:detail", kwargs={"username": self.request.user.username})

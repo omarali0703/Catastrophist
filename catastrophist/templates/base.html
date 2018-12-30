@@ -43,15 +43,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-               <a class="nav-link" id='navbar-brand-format' href="{% url 'stories:stories' %}">Featured </a>
+               <a class="nav-link" id='navbar-brand-format' href="{% url 'stories:stories' %}"> Featured </a>
             </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" id='navbar-brand-format' href="{% url 'stories:addstory' %}">{% trans "Add Story" %}</a>
+                <a class="nav-link" id='navbar-brand-format' href="{% url 'stories:addstory' %}">{% trans "Create" %}</a>
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" id='navbar-brand-format' href="{% url 'users:detail' request.user.username  %}">{% trans "Me" %} {{ username }}</a>
+                <a class="nav-link" id='navbar-brand-format' href="{% url 'users:detail' request.user.username  %}">{% trans "Me" %} {{ username }} </a>
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}

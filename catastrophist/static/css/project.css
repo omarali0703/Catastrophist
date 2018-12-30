@@ -1,6 +1,11 @@
 body {
   background-color: #FA5457; }
 
+.field {
+  border-radius: 0;
+  -webkit-appearance: none;
+  color: #fff; }
+
 .alert-debug {
   background-color: #fff;
   border-color: #d6e9c6;
@@ -15,28 +20,28 @@ body {
   background-color: #FFFBFB;
   border-radius: 2px;
   font-weight: bold;
-  text-align: justify;
+  text-align: left;
   font-family: 'Kadwa', serif;
   color: #FA5457;
   padding: 8vw;
   padding-top: 20px;
   padding-bottom: 20px;
-  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
 .story-blurb {
   background-color: #FFFBFB;
   border-radius: 2px;
   font-weight: bold;
   font-family: 'Kadwa', serif;
-  text-align: justify;
+  text-align: left;
   color: green;
   width: 100%;
   padding: 8vw;
   padding-top: 20px;
   padding-bottom: 20px;
-  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
 .story-title {
   background-color: #FFFBFB;
@@ -44,18 +49,22 @@ body {
   font-family: 'Patua One', cursive;
   font-weight: bold;
   font-size: 200%;
+  text-transform: capitalize;
   color: #231089;
   text-align: center;
   padding: 20px;
-  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
 .page-title {
   padding-top: 100px;
   font-family: 'Patua One', cursive;
   color: #fff;
   text-align: center;
-  text-shadow: 0px 6px 0px rgba(0, 0, 0, 0.1); }
+  font-size: 64px;
+  text-shadow: 0px 6px 0px rgba(0, 0, 0, 0.2);
+  -webkit-text-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
 .story-author {
   background-color: #FFFBFB;
@@ -67,8 +76,8 @@ body {
   padding: 8vw;
   padding-top: 20px;
   padding-bottom: 20px;
-  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
 .story-background {
   padding: 0;
@@ -76,19 +85,39 @@ body {
   padding-bottom: 30px;
   margin-bottom: 40px;
   border-bottom: 4px solid #fff;
-  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
 #navbar-brand-format {
-  font-family: 'Kadwa', serif; }
+  font-family: 'Patua One', cursive;
+  color: #98CB4A; }
 
 .btn {
-  background-color: #98CB4A;
   color: #fff;
+  background-color: #98CB4A;
   border: 0px;
-  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
   font-size: 12pt;
   font-family: 'Patua One', cursive; }
+
+p {
+  text-align: center; }
+
+#newstory {
+  font-size: 32px;
+  width: 10em; }
+
+.col-form-label {
+  font-family: 'Patua One', cursive;
+  font-size: 20px;
+  color: #fff; }
+
+.textinput {
+  border-radius: 20px;
+  border: 0px;
+  background-color: #fff; }
 
 /*# sourceMappingURL=project.css.map */
