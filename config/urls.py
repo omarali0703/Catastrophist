@@ -18,7 +18,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     path(
-        "",
+        "stories/",
         include("catastrophist.stories.urls", namespace="stories"), name="stories",
     ),
 ] + static(

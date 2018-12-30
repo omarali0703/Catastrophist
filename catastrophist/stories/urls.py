@@ -1,12 +1,11 @@
 from django.urls import path
+from django.contrib.auth.decorators import login_required
 
-from catastrophist.stories.views import *
-from catastrophist.users.views import user_update_view
+from .views import *
 
 app_name = "stories"
 urlpatterns = [
-    path("stories/", view=StoriesView.as_view(), name="stories"),
+    path("", view=StoriesView.as_view(), name="stories"),
     path("addblock/", view=AddBlockView.as_view(), name="addblock"),
-
-
+    path("addstory/", view=login_required(AddStoryView.as_view()), name='addstory'),
 ]

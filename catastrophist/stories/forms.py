@@ -1,5 +1,12 @@
-from django import forms
-from  .models import StoryBlock
+from django.forms import ModelForm, Form, CharField, Textarea
+from  .models import StoryBlock, Story
 
-class AddBlockForm(forms.Form):
-    body_text = forms.CharField(widget=forms.Textarea(attrs={'rows': 2, 'cols': 40}), label="body text")
+
+class AddBlockForm(Form):
+    body_text = CharField(widget=Textarea(attrs={'rows': 2, 'cols': 40}), label="body text")
+
+
+class AddStoryForm(ModelForm):
+    class Meta:
+        model = Story
+        fields = ['story_name', 'story_blurb']
