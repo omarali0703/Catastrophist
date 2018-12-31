@@ -1,5 +1,5 @@
 body {
-  background-color: #FA5457; }
+  background-color: #6C64BB; }
 
 .field {
   border-radius: 0;
@@ -14,7 +14,7 @@ body {
 .alert-error {
   background-color: #f2dede;
   border-color: #eed3d7;
-  color: #FA5457; }
+  color: #6C64BB; }
 
 .story-block {
   background-color: #FFFBFB;
@@ -22,7 +22,7 @@ body {
   font-weight: bold;
   text-align: left;
   font-family: 'Kadwa', serif;
-  color: #FA5457;
+  color: #6C64BB;
   padding: 8vw;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -30,12 +30,12 @@ body {
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
 .story-blurb {
-  background-color: #FFFBFB;
+  background-color: #fff;
   border-radius: 2px;
   font-weight: bold;
   font-family: 'Kadwa', serif;
   text-align: left;
-  color: green;
+  color: #FBA100;
   width: 100%;
   padding: 8vw;
   padding-top: 20px;
@@ -53,6 +53,7 @@ body {
   color: #231089;
   text-align: center;
   padding: 20px;
+  margin-bottom: 1rem;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
@@ -89,12 +90,11 @@ body {
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
 
 #navbar-brand-format {
-  font-family: 'Patua One', cursive;
-  color: #98CB4A; }
+  font-family: 'Patua One', cursive; }
 
 .btn {
   color: #fff;
-  background-color: #98CB4A;
+  background-color: #FBA100;
   border: 0px;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -119,5 +119,9 @@ p {
   border-radius: 20px;
   border: 0px;
   background-color: #fff; }
+
+.container {
+  padding-left: 0;
+  padding-right: 0; }
 
 /*# sourceMappingURL=project.css.map */

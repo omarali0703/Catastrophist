@@ -3,10 +3,11 @@
 {%block content%}
 <h1 class='page-title'> Featured Stories. </h1>
 
-<div class="container">
-    <div class='story-background'>
-        {% if story_list %}
-            {% for story in story_list %}
+<div>
+    {% if story_list %}
+        {% for story in story_list %}
+            <div class="story-background">
+
                 <p class='story-title'>{{ story.story_name }}</h2>
                 <p class='story-blurb'> {{ story.story_blurb }}</p>
 
@@ -16,11 +17,11 @@
                     {% endif %}
                 {% endfor %}
             	<p class='story-author'> Created by, {{ story.user_creator }}.</p>
-            {% endfor %}
-        {% else %}
-            <p class='story-block'>no stories available</p>
-        {% endif %}
-    </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class='story-block'>no stories available</p>
+    {% endif %}
 </div>
 
 

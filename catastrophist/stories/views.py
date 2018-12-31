@@ -34,11 +34,15 @@ class UserStoriesView(ListView):
 
 
 class AddBlockView(UpdateView):
-    fields = ["body_text", "story"]
+    fields = ["body_text"]
     model = StoryBlock
-
+    title = ""
     def get_object(self):
-        return StoryBlock.objects.all().first()
+        id = self.request.GET.get('id', '')
+        s = Story.objects.get(id=int(id))
+        b = StoryBlock.objects.filter(story__exact=s).first()
+        self.title = s.story_name
+        return b
 
 #    def form_valid(self, form):
 #        StoryBlock.objects.create( **form.cleaned_data)

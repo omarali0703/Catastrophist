@@ -16,9 +16,10 @@ $black: #000;
 $pink: #f2dede;
 $dark-pink: #eed3d7;
 
-$red: #FA5457;
+$purple: #6C64BB;
 $blue: #231089;
-$green: #98CB4A;
+$dustyrose: #B6A19E;
+$buttoncolor: #FBA100;
 $rad:2px;
 $shad:0.20;
 ////////////////////////////////
@@ -28,7 +29,7 @@ $shad:0.20;
 // bootstrap alert CSS, translated to the django-standard levels of
 // debug, info, success, warning, error
 body {
-    background-color: $red;
+    background-color: $purple;
 }
 
 .field {
@@ -46,17 +47,17 @@ body {
 .alert-error {
   background-color: $pink;
   border-color: $dark-pink;
-  color: $red;
+  color: $purple;
 }
 
 .story-block {
     background-color: #FFFBFB;
-    //border: 4px solid $red;
+    //border: 4px solid $purple;
     border-radius: $rad;
     font-weight: bold;
     text-align: left;
     font-family: 'Kadwa', serif;
-    color: $red;
+    color: $purple;
     padding: 8vw;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -65,13 +66,13 @@ body {
 }
 
 .story-blurb {
-    background-color: #FFFBFB;
-    //border: 4px solid $green;
+    background-color: $white;
+    //border: 4px solid $dustyrose;
     border-radius: $rad;
     font-weight: bold;
     font-family: 'Kadwa', serif;
     text-align: left;
-    color: green;
+    color: $buttoncolor;
     width: 100%;
     padding: 8vw;
     padding-top: 20px;
@@ -93,6 +94,7 @@ body {
     color: $blue;
     text-align: center;
     padding: 20px;
+    margin-bottom: 1rem;
     -webkit-box-shadow: 0px 9px 0px 0px rgba(0,0,0,$shad);
     box-shadow: 0px 9px 0px 0px rgba(0,0,0,$shad);
 
@@ -100,6 +102,7 @@ body {
 
 .page-title {
     padding-top: 100px;
+
     font-family: 'Patua One', cursive;
     color: $white;
     text-align: center;
@@ -112,7 +115,7 @@ body {
 
 .story-author {
     background-color: #FFFBFB;
-    //border: 4px solid $green;
+    //border: 4px solid $dustyrose;
     border-radius: $rad;
     font-weight: bold;
     font-family: 'Kadwa', serif;
@@ -137,12 +140,11 @@ body {
 
 #navbar-brand-format {
     font-family: 'Patua One', cursive;
-    color: $green;
 }
 
 .btn {
     color: $white;
-    background-color: $green;
+    background-color: $buttoncolor;
     border: 0px;
     border-radius: $rad*10;
     margin-bottom: 20px;
@@ -169,4 +171,9 @@ p {
     border-radius: $rad*10;
     border: 0px;
     background-color: $white;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
 }

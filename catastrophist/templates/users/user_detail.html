@@ -23,12 +23,12 @@
     {% endif %}
 </div>
 
-<div class='story-background'>
-    <h2 class='page-title'>My Stories</h2>
+<h2 class='page-title'>My Stories</h2>
 
-    {%if view.story_list %}
+{%if view.story_list %}
     <p> {{view.title}} </p>
-        {%for story in view.story_list %}
+    {%for story in view.story_list %}
+        <div class='story-background'>
             <h2 class='story-title'> {{ story.story_name }} </h2>
             <p class='story-blurb'> {{ story.story_blurb }} </p>
 
@@ -37,13 +37,12 @@
                     <p class='story-block'> {{ block.body_text }}</p>
                 {% endif %}
             {% endfor %}
-
-            <a class="btn btn-primary" href="{% url 'stories:addblock' %}" role="button">New Block</a>
-        {%endfor%}
-    {%else%}
-        <p class='story-block'> You have nothing to show.</p>
-    {%endif%}
-    <p><a class="btn btn-primary" id="newstory" href="{% url 'stories:addstory' %}" role="button">New Story</a></p>
-</div>
+            <a class="btn btn-primary" href="{% url 'stories:addblock' %}?id={{story.id}}" role="button">New Block</a>
+        </div>
+    {%endfor%}
+{%else%}
+    <p class='story-block'> You have nothing to show.</p>
+{%endif%}
+<p><a class="btn btn-primary" id="newstory" href="{% url 'stories:addstory' %}" role="button">New Story</a></p>
 <!-- End Action buttons -->
 {% endblock content %}
