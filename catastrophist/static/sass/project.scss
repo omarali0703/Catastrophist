@@ -11,6 +11,7 @@
 // Alert colors
 
 $white: #fff;
+$white-trans: rgba(255,255,255,0.4);
 $mint-green: #d6e9c6;
 $black: #000;
 $pink: #f2dede;
@@ -31,6 +32,14 @@ $shad:0.20;
 // debug, info, success, warning, error
 body {
     background-color: $purple;
+    background-repeat: no-repeat;
+    background-position: top;
+    position: relative;
+    display: block;
+    background-size: cover;
+    transform: translateZ(-1);
+    z-index: -1;
+    background-image: url("/static/images/bg.png")
 }
 
 .field {
@@ -42,10 +51,11 @@ body {
     background-color: $red;
     //border: 4px solid $purple;
     border-radius: $rad;
+    border:0;
     font-weight: bold;
     text-align: left;
     font-family: 'Kadwa', serif;
-    color: $red;
+    color: $white;
     padding: 8vw;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -149,8 +159,7 @@ body {
 
 }
 .story-background {
-    padding: 0;
-    margin: 0;
+    margin: 10px;
     padding-bottom: 30px;
     margin-bottom: 40px;
     border-bottom: 4px solid $white;
@@ -189,14 +198,16 @@ p {
 
 .textinput {
     border-radius: $rad*10;
-    border: 0px;
-    background-color: $white;
+    border-color: $white;
+    background-color: $white-trans;
+    border: 0;
+
 }
 
 .textarea {
     border-radius: $rad*10;
-    border: 0px;
-    background-color: $white;
+    border: 0;
+    background-color: $white-trans;
 }
 
 .container {

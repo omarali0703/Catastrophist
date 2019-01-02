@@ -45,7 +45,9 @@
         </div>
     {%endfor%}
 {%else%}
-    <p class='story-block'> You have nothing to show.</p>
+    <div class="story-background">
+        <p class='story-block'> You have nothing to show.</p>
+    </div>
 {%endif%}
 <p><a class="btn btn-primary" id="newstory" href="{% url 'stories:addstory' %}" role="button">New Story ＋</a></p>
 <!-- End Action buttons -->

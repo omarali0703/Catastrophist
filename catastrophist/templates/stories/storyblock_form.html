@@ -8,8 +8,8 @@
   <form class="form-horizontal" method="post" action="{% url 'stories:addblock'%}?id={{view.id}}">
     {% csrf_token %}
         {% if view.s.user_creator == request.user %}
-            {{ form|crispy }}
             <div class="story-background">
+                {{ form|crispy }}
                 <div class="control-group">
                     <div class="controls">
                         <button type="submit" class="btn"> Add Block </button>
