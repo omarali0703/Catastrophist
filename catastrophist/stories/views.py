@@ -47,9 +47,10 @@ class AddBlockView(FormView):
     form_class = AddBlockForm
     template_name = 'stories/storyblock_form.html'
     id = 0
-
+    title=""
     def get_context_data(self, **kwargs):
         self.id = int(self.request.GET.get('id', -1))
+        self.title = Story.objects.get(id=self.request.GET.get('id')).story_name
         context = super().get_context_data(**kwargs)
         return context
 
