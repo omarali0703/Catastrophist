@@ -28,27 +28,35 @@
 {%if view.story_list %}
     <p> {{view.title}} </p>
     {%for story in view.story_list %}
-        <div class='story-background'>
-            <a href="{%url 'stories:displaystory' %}?id={{story.id}}"><h2 class='story-title'> {{ story.story_name }} </h2></a>
-            <p class='story-blurb'> {{ story.story_blurb }} </p>
+        {%if story.user_creator == object %}
+            <div class='story-background'>
+                <a href="{%url 'stories:displaystory' %}?id={{story.id}}"><h2 class='story-title'> {{ story.story_name }} </h2></a>
+                <p class='story-blurb'> {{ story.story_blurb }} </p>
 
-            {% for block in view.block_list %}
-                {%if block.story == story %}
-                    <p class='story-block'> {{ block.body_text }}</p>
-                    <a class="btn btn-primary" href="{% url 'stories:removeblock' %}?blockid={{block.id}}" role="button">Remove</a>
-                {% endif %}
-            {% endfor %}
-            <p>
-                <a class="btn btn-primary" href="{% url 'stories:addblock' %}?id={{story.id}}" role="button">＋</a>
-                <a class="btn btn-primary" href="{% url 'stories:removestory' %}?id={{story.id}}" role="button">Remove Story</a>
-            </p>
-        </div>
+                {% for block in view.block_list %}
+                    {%if block.story == story %}
+                        <p class='story-block'> {{ block.body_text }}</p>
+                        {%if object == request.user %}
+                            <a class="btn btn-primary" href="{% url 'stories:removeblock' %}?blockid={{block.id}}" role="button">Remove</a>
+                        {%endif%}
+                    {% endif %}
+                {% endfor %}
+                <p>
+                    {%if object == request.user %}
+                        <a class="btn btn-primary" href="{% url 'stories:addblock' %}?id={{story.id}}" role="button">＋</a>
+                        <a class="btn btn-primary" href="{% url 'stories:removestory' %}?id={{story.id}}" role="button">Remove Story</a>
+                    {%endif%}
+                </p>
+            </div>
+        {%endif%}
     {%endfor%}
 {%else%}
     <div class="story-background">
         <p class='story-block'> You have nothing to show.</p>
     </div>
 {%endif%}
-<p><a class="btn btn-primary" id="newstory" href="{% url 'stories:addstory' %}" role="button">New Story ＋</a></p>
+{%if object == request.user %}
+    <p><a class="btn btn-primary" id="newstory" href="{% url 'stories:addstory' %}" role="button">New Story ＋</a></p>
+{%endif%}
 <!-- End Action buttons -->
 {% endblock content %}

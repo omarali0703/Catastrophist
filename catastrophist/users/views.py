@@ -15,7 +15,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     slug_url_kwarg = "username"
 
     def story_list(self):
-        return Story.objects.filter(user_creator=self.request.user)
+        return Story.objects.all() #need to make sure i can view others' stories whilst signed in. 
 
     def block_list(self):
         return StoryBlock.objects.all()
