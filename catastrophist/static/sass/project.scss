@@ -39,7 +39,7 @@ body {
   color: $white;
 }
 .alert {
-    background-color: $error-red;
+    background-color: $red;
     //border: 4px solid $purple;
     border-radius: $rad;
     font-weight: bold;
@@ -72,6 +72,8 @@ body {
     font-weight: bold;
     text-align: left;
     font-family: 'Kadwa', serif;
+    text-overflow: clip;
+    word-wrap: break-word;
     color: $purple;
     padding: 8vw;
     padding-top: 20px;
@@ -87,6 +89,8 @@ body {
     font-weight: bold;
     font-family: 'Kadwa', serif;
     text-align: left;
+    text-overflow: clip;
+    word-wrap: break-word;
     color: $buttoncolor;
     width: 100%;
     padding: 8vw;
@@ -184,6 +188,12 @@ p {
 }
 
 .textinput {
+    border-radius: $rad*10;
+    border: 0px;
+    background-color: $white;
+}
+
+.textarea {
     border-radius: $rad*10;
     border: 0px;
     background-color: $white;

@@ -7,7 +7,7 @@ body {
   color: #fff; }
 
 .alert {
-  background-color: #FFC8C5;
+  background-color: #EB574F;
   border-radius: 2px;
   font-weight: bold;
   text-align: left;
@@ -35,6 +35,8 @@ body {
   font-weight: bold;
   text-align: left;
   font-family: 'Kadwa', serif;
+  text-overflow: clip;
+  word-wrap: break-word;
   color: #6C64BB;
   padding: 8vw;
   padding-top: 20px;
@@ -48,6 +50,8 @@ body {
   font-weight: bold;
   font-family: 'Kadwa', serif;
   text-align: left;
+  text-overflow: clip;
+  word-wrap: break-word;
   color: #FBA100;
   width: 100%;
   padding: 8vw;
@@ -130,6 +134,11 @@ p {
   color: #fff; }
 
 .textinput {
+  border-radius: 20px;
+  border: 0px;
+  background-color: #fff; }
+
+.textarea {
   border-radius: 20px;
   border: 0px;
   background-color: #fff; }

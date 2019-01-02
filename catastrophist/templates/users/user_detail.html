@@ -38,12 +38,15 @@
                     <a class="btn btn-primary" href="{% url 'stories:removeblock' %}?blockid={{block.id}}" role="button">Remove</a>
                 {% endif %}
             {% endfor %}
-            <a class="btn btn-primary" href="{% url 'stories:addblock' %}?id={{story.id}}" role="button">New Block</a>
+            <p>
+                <a class="btn btn-primary" href="{% url 'stories:addblock' %}?id={{story.id}}" role="button">＋</a>
+                <a class="btn btn-primary" href="{% url 'stories:removestory' %}?id={{story.id}}" role="button">Remove Story</a>
+            </p>
         </div>
     {%endfor%}
 {%else%}
     <p class='story-block'> You have nothing to show.</p>
 {%endif%}
-<p><a class="btn btn-primary" id="newstory" href="{% url 'stories:addstory' %}" role="button">New Story</a></p>
+<p><a class="btn btn-primary" id="newstory" href="{% url 'stories:addstory' %}" role="button">New Story ＋</a></p>
 <!-- End Action buttons -->
 {% endblock content %}

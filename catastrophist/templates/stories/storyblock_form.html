@@ -7,16 +7,17 @@
   <h1 class='page-title'>{{ view.title }}</h1>
   <form class="form-horizontal" method="post" action="{% url 'stories:addblock'%}?id={{view.id}}">
     {% csrf_token %}
-
-        {{ form|crispy }}
-        <div class="story-background">
-            <div class="control-group">
-              <div class="controls">
-                <button type="submit" class="btn"> Add Block </button>
-                <button type="button" onclick="history.go(-1)" class="btn"> Cancel </button>
-              </div>
+        {% if view.s.user_creator == request.user %}
+            {{ form|crispy }}
+            <div class="story-background">
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn"> Add Block </button>
+                        <button type="button" onclick="history.go(-1)" class="btn"> Cancel </button>
+                    </div>
+                </div>
             </div>
-        </div>
+        {% endif %}
   </form>
 
 {% endblock %}

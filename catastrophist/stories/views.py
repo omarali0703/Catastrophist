@@ -47,9 +47,12 @@ class AddBlockView(FormView):
     form_class = AddBlockForm
     template_name = 'stories/storyblock_form.html'
     id = 0
-    title=""
+    title = ""
+    s = ""
     def get_context_data(self, **kwargs):
+
         self.id = int(self.request.GET.get('id', -1))
+        self.s = Story.objects.get(id=self.request.GET.get('id'));
         self.title = Story.objects.get(id=self.request.GET.get('id')).story_name
         context = super().get_context_data(**kwargs)
         return context
@@ -68,4 +71,13 @@ class RemoveBlockView(View):
     def get(self, request, *args, **kwargs):
         blockid = self.request.GET.get('blockid', -1)
         StoryBlock.objects.filter(id=blockid).delete()
+        return HttpResponseRedirect(reverse("users:detail", args={self.request.user.username}))
+
+class RemoveStoryView(View):
+    model = Story
+    title = ""
+
+    def get(self, request, *args, **kwargs):
+        story = self.request.GET.get('id', -1)
+        Story.objects.filter(id=story).delete()
         return HttpResponseRedirect(reverse("users:detail", args={self.request.user.username}))
