@@ -7,7 +7,7 @@
     {% if story_list %}
         {% for story in story_list %}
             <div class="story-background">
-                <p class='story-title'>{{ story.story_name }}</h2>
+                <a href="{%url 'stories:displaystory' %}?id={{story.id}}"><h2 class='story-title'> {{ story.story_name }} </h2></a>
                 <p class='story-blurb'> {{ story.story_blurb }}</p>
             	<p class='story-author'> Created by, {{ story.user_creator }}.</p>
             </div>

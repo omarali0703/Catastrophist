@@ -29,7 +29,7 @@
     <p> {{view.title}} </p>
     {%for story in view.story_list %}
         <div class='story-background'>
-            <h2 class='story-title'> {{ story.story_name }} </h2>
+            <a href="{%url 'stories:displaystory' %}?id={{story.id}}"><h2 class='story-title'> {{ story.story_name }} </h2></a>
             <p class='story-blurb'> {{ story.story_blurb }} </p>
 
             {% for block in view.block_list %}

@@ -32,6 +32,19 @@ class UserStoriesView(ListView):
     def block_list(self):
         return StoryBlock.objects.all()
 
+class StoryDisplayView(ListView):
+    template_name = "stories/storydisplay_form.html"
+    model = Story
+    context_object_name = 'story_list'
+
+    def block_list(self):
+        return StoryBlock.objects.all()
+
+    def story(self):
+        s = Story.objects.get(id=self.request.GET.get('id', -1))
+        return s
+
+
 class AddStoryView(FormView):
     form_class = AddStoryForm
     template_name = 'stories/story_form.html'
