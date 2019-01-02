@@ -4,8 +4,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.shortcuts import render, render_to_response
-from django.http import HttpResponseRedirect
-from django.views.generic import DetailView, ListView, RedirectView, UpdateView, CreateView, TemplateView, FormView
+from django.http import HttpResponseRedirect, HttpResponse
+from django.views.generic import View, DetailView, ListView, RedirectView, UpdateView, CreateView, TemplateView, FormView
 from django.forms import ModelForm
 from django.http import HttpResponseRedirect
 
@@ -32,26 +32,6 @@ class UserStoriesView(ListView):
     def block_list(self):
         return StoryBlock.objects.all()
 
-
-class AddBlockView(UpdateView):
-    fields = ["body_text"]
-    model = StoryBlock
-    title = ""
-    def get_object(self):
-        id = self.request.GET.get('id', '')
-        s = Story.objects.get(id=int(id))
-        b = StoryBlock.objects.filter(story__exact=s).first()
-        self.title = s.story_name
-        return b
-
-#    def form_valid(self, form):
-#        StoryBlock.objects.create( **form.cleaned_data)
-#        return super().form_valid(form)
-
-    def get_success_url(self):
-        return reverse("users:detail", kwargs={"username": self.request.user.username})
-
-
 class AddStoryView(FormView):
     form_class = AddStoryForm
     template_name = 'stories/story_form.html'
@@ -62,3 +42,29 @@ class AddStoryView(FormView):
 
     def get_success_url(self):
         return reverse("users:detail", kwargs={"username": self.request.user.username})
+
+class AddBlockView(FormView):
+    form_class = AddBlockForm
+    template_name = 'stories/storyblock_form.html'
+    id = 0
+
+    def get_context_data(self, **kwargs):
+        self.id = int(self.request.GET.get('id', -1))
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def form_valid(self, form):
+        StoryBlock.objects.create(story=Story.objects.get(id=self.request.GET.get('id')), **form.cleaned_data)
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse("users:detail", kwargs={"username": self.request.user.username})
+
+class RemoveBlockView(View):
+    model = StoryBlock
+    title = ""
+
+    def get(self, request, *args, **kwargs):
+        blockid = self.request.GET.get('blockid', -1)
+        StoryBlock.objects.filter(id=blockid).delete()
+        return HttpResponseRedirect(reverse("users:detail", args={self.request.user.username}))

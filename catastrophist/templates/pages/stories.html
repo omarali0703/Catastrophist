@@ -7,15 +7,8 @@
     {% if story_list %}
         {% for story in story_list %}
             <div class="story-background">
-
                 <p class='story-title'>{{ story.story_name }}</h2>
                 <p class='story-blurb'> {{ story.story_blurb }}</p>
-
-                {% for block in view.block_list %}
-                    {%if block.story == story %}
-                        <p class='story-block'> {{ block.body_text }}</p>
-                    {% endif %}
-                {% endfor %}
             	<p class='story-author'> Created by, {{ story.user_creator }}.</p>
             </div>
         {% endfor %}

@@ -35,6 +35,7 @@
             {% for block in view.block_list %}
                 {%if block.story == story %}
                     <p class='story-block'> {{ block.body_text }}</p>
+                    <a class="btn btn-primary" href="{% url 'stories:removeblock' %}?blockid={{block.id}}" role="button">Remove</a>
                 {% endif %}
             {% endfor %}
             <a class="btn btn-primary" href="{% url 'stories:addblock' %}?id={{story.id}}" role="button">New Block</a>

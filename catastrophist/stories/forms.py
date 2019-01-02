@@ -2,9 +2,12 @@ from django import forms
 
 from  .models import *
 
-class AddBlockForm(forms.Form):
-    fields = ["body_text", "story"]
-    body_text = forms.CharField(widget=forms.Textarea(attrs={'rows':3, 'class': 'textarea'}))
+class AddBlockForm(forms.ModelForm):
+    class Meta:
+        model=StoryBlock
+        fields = ["body_text"]
+
+        #body_text = forms.CharField(widget=forms.Textarea(attrs={'rows':3, 'class': 'textarea'}))
 
 class AddStoryForm(forms.ModelForm):
     class Meta:

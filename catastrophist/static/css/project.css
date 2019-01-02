@@ -6,6 +6,19 @@ body {
   -webkit-appearance: none;
   color: #fff; }
 
+.alert {
+  background-color: #FFC8C5;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'Kadwa', serif;
+  color: #EB574F;
+  padding: 8vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
+
 .alert-debug {
   background-color: #fff;
   border-color: #d6e9c6;
@@ -63,6 +76,7 @@ body {
   color: #fff;
   text-align: center;
   font-size: 64px;
+  text-transform: capitalize;
   text-shadow: 0px 6px 0px rgba(0, 0, 0, 0.2);
   -webkit-text-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
   text-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
