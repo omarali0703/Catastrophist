@@ -43,6 +43,7 @@ body {
   border-radius: 2px;
   font-weight: bold;
   text-align: left;
+  font-size: 20px;
   font-family: 'Kadwa', serif;
   text-overflow: clip;
   word-wrap: break-word;
@@ -52,12 +53,16 @@ body {
   padding-bottom: 20px;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
+  @media (min-width: 1000px) {
+    .story-block {
+      font-size: 18px; } }
 
 .story-blurb {
   background-color: #fff;
   border-radius: 2px;
   font-weight: bold;
   font-family: 'Kadwa', serif;
+  font-size: 20px;
   text-align: left;
   text-overflow: clip;
   word-wrap: break-word;
@@ -68,6 +73,9 @@ body {
   padding-bottom: 20px;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
+  @media (min-width: 1000px) {
+    .story-blurb {
+      font-size: 18px; } }
 
 .story-title {
   background-color: #FFFBFB;
@@ -87,18 +95,30 @@ body {
   padding-top: 100px;
   font-family: 'Patua One', cursive;
   color: #fff;
-  text-align: center;
-  font-size: 64px;
+  font-size: 42px;
   text-transform: capitalize;
+  text-align: center;
   text-shadow: 0px 6px 0px rgba(0, 0, 0, 0.2);
   -webkit-text-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
   text-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
+  @media (min-width: 1000px) {
+    .page-title {
+      font-size: 64px; } }
+
+#main-title {
+  padding-bottom: 100px;
+  text-decoration: underline; }
+  @media (min-width: 1000px) {
+    #main-title {
+      font-size: 128px;
+      padding-bottom: 50px; } }
 
 .story-author {
   background-color: #FFFBFB;
   border-radius: 2px;
   font-weight: bold;
   font-family: 'Kadwa', serif;
+  font-size: 16px;
   text-align: right;
   color: green;
   padding: 8vw;
@@ -106,6 +126,9 @@ body {
   padding-bottom: 20px;
   -webkit-box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 9px 0px 0px rgba(0, 0, 0, 0.2); }
+  @media (min-width: 1000px) {
+    .story-author {
+      font-size: 12px; } }
 
 .story-background {
   margin: 10px;
