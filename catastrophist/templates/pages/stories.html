@@ -9,7 +9,7 @@
             <div class="story-background">
                 <a href="{%url 'stories:displaystory' %}?id={{story.id}}"><h2 class='story-title'> {{ story.story_name }} </h2></a>
                 <p class='story-blurb'> {{ story.story_blurb }}</p>
-            	<p class='story-author'> Created by, {{ story.user_creator }}.</p>
+            	<p class='story-author'> Created by, <a href="{% url 'users:detail' story.user_creator.username  %}">{{ story.user_creator }}.</a> </p>
             </div>
         {% endfor %}
     {% else %}
